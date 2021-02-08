@@ -48,7 +48,7 @@ def main():
 	run.log('Accuracy', np.float(accuracy))
 	
 	os.makedirs('outputs', exist_ok=True)
-	joblib.dump(model, 'outputs/model.joblib')
+	joblib.dump(model, 'outputs/model.pkl')
 	
 if __name__ == '__main__':
     main()
