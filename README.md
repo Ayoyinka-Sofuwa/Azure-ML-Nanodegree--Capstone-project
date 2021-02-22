@@ -10,6 +10,12 @@ I used two different kinds of experiments to make this prediction and compared w
 The two experiments are the [Automated Machine learning](https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-first-experiment-automated-ml) and the [Hyperdrive](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) experiments.
 
 
+### Architectural diagram
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/architectural%20diagram.jpg">
+</p>
+
+
 ### Task
 This task is a classification task in a supervised learning operation that predicts whether the diagnosis will either be a cancerous lump or a non cancerous lump.
 The features of this data include: 
@@ -28,13 +34,14 @@ I am seeking to predict the diagnosis column which is the labelled data containi
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
 
+
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+*TODO* Remember to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with its parameters.
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
