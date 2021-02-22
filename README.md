@@ -32,7 +32,11 @@ It contains 569 observations(rows) and 6 features(columns)
 I am seeking to predict the diagnosis column which is the labelled data containing details of lumps that have been recorded as cancerous(1) or not cancerous(0).
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+I accessed the data using the URL, using the delimited files method from the Tabular Dataset Factory and I registered it in my workspace using the code:
+
+`data = 'https://raw.githubusercontent.com/Ayoyinka-Sofuwa/Capstone-project/main/Breast_cancer_data.csv'
+dataset = Dataset.Tabular.from_delimited_files(data)        
+dataset = dataset.register(workspace=ws,name=key,description=description_text)`
 
 
 ## Automated ML
