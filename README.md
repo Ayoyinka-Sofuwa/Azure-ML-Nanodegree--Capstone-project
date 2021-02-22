@@ -42,6 +42,9 @@ dataset = dataset.register(workspace=ws,name=key,description=description_text)`
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
+In my automl settings, I set the experiment to time out at 30 minutes, run 4 experiments at a time and the primary metric to be highlighted will be the accuracy of each model generated.
+It is a classification experiment and my target column to be predicted is the diagnosis column. And I configured the automated ML experiment to be Onnx compatible for deployment.
+
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
@@ -49,6 +52,7 @@ dataset = dataset.register(workspace=ws,name=key,description=description_text)`
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+
 Hyperparameters are adjustable parameters we choose for model training that guide the training process. The HyperDrive package helps to automate choosing these parameters.
 For my logistic regression experiment, the parameters I used in the search space are C and max_iter. I ran a RansomSampling method over the search space because it iterates much faster over the search space, my primary metric was the accuracy metric and 
 My parameter search space was defined using the C(continuous) and the max_iter (discrete)
