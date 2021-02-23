@@ -40,7 +40,6 @@ dataset = dataset.register(workspace=ws,name=key,description=description_text)`
 
 
 ## Automated ML
-*TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
 In my automl settings, I set the experiment to time out at 30 minutes, run 4 experiments at a time and the primary metric to be highlighted will be the accuracy of each model generated.
 It is a classification experiment and my target column to be predicted is the diagnosis column. And I configured the automated ML experiment to be Onnx compatible for deployment.
@@ -52,19 +51,31 @@ My best AutoMl model is the VotingEnsemble with an accuracy of 94%,
 *TODO* Remember to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with its parameters.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 Hyperparameters are adjustable parameters we choose for model training that guide the training process. The HyperDrive package helps to automate choosing these parameters.
 For my logistic regression experiment, the parameters I used in the search space are C and max_iter. I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric was the accuracy metric.
-My parameter search space was defined using the C(continuous values) and the max_iter (discrete values), with smaller values to get a stronger regularization for the hyperparameter and the maximum number of iterations for the classification algorithm. My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
+My parameter search space was defined using the C(continuous values, ranging uniformly between 0.2 and 0.5) and the max_iter (discrete values, ranging by choice between 2 and 50), with smaller values to get a stronger regularization for the hyperparameter and the maximum number of iterations for the classification algorithm. My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
 
 My hyperdrive configuration included the estimator, the policy, the parameter sampler, the primary metric as "Accuracy" and to maximize it as the goal, maximum concurrent runs, and the total runs for the experiment. I submitted this configuration for the hyperdrive and began the experiment run.
 
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+My best performing model had an accuracy of 91.6%. I could have improved the performance of this model by increasing the range of values in my C and max_iter parameter search space. The parameters were independently set at: regularization strength of 0.2368 and maximum iteration value of 50 
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/5000ac6963fe744349c5aaebf0edc0922eb194cc/screenshots/run%20details%20hyper.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/run%20details%20hyper.png">
+</p>
+
+This is the screenshot of the best trained model with its parameters
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/best%20run%20hyper.png">
+</p>
+
+
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
