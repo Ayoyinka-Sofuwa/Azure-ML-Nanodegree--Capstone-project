@@ -47,6 +47,7 @@ It is a classification experiment and my target column to be predicted is the di
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
+My best AutoMl model is the VotingEnsemble with an accuracy of 94%, 
 
 *TODO* Remember to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with its parameters.
 
@@ -54,10 +55,11 @@ It is a classification experiment and my target column to be predicted is the di
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
 
 Hyperparameters are adjustable parameters we choose for model training that guide the training process. The HyperDrive package helps to automate choosing these parameters.
-For my logistic regression experiment, the parameters I used in the search space are C and max_iter. I ran a RansomSampling method over the search space because it iterates much faster over the search space, my primary metric was the accuracy metric and 
-My parameter search space was defined using the C(continuous) and the max_iter (discrete)
+For my logistic regression experiment, the parameters I used in the search space are C and max_iter. I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric was the accuracy metric.
+My parameter search space was defined using the C(continuous values) and the max_iter (discrete values), with smaller values to get a stronger regularization for the hyperparameter and the maximum number of iterations for the classification algorithm. My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
 
-For example, you can define the parameter search space as discrete or continuous, and a sampling method over the search space as random, grid, or Bayesian. Also, you can specify a primary metric to optimize in the hyperparameter tuning experiment, and whether to minimize or maximize that metric. You can also define early termination policies in which poorly performing experiment runs are canceled and new ones started
+My hyperdrive configuration included the estimator, the policy, the parameter sampler, the primary metric as "Accuracy" and to maximize it as the goal, maximum concurrent runs, and the total runs for the experiment. I submitted this configuration for the hyperdrive and began the experiment run.
+
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
