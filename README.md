@@ -75,6 +75,11 @@ This is the screenshot of the best trained model with its parameters
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/best%20run%20hyper.png">
 </p>
 
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/best%20run%20details.png">
+</p>
+
+
 
 
 ## Model Deployment
