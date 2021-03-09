@@ -34,19 +34,17 @@ I am seeking to predict the diagnosis column which is the labelled data containi
 ### Access
 I accessed the data using the URL, using the delimited files method from the Tabular Dataset Factory and I registered it in my workspace using the code:
 
-`data = 'https://raw.githubusercontent.com/Ayoyinka-Sofuwa/Capstone-project/main/Breast_cancer_data.csv'
-dataset = Dataset.Tabular.from_delimited_files(data)        
-dataset = dataset.register(workspace=ws,name=key,description=description_text)`
+`data = 'https://raw.githubusercontent.com/Ayoyinka-Sofuwa/Capstone-project/main/Breast_cancer_data.csv'`
 
 
 ## Automated ML
 
-In my automl settings, I set the experiment to time out at 30 minutes, run 4 experiments at a time and the primary metric to be highlighted will be the accuracy of each model generated.
-It is a classification experiment and my target column to be predicted is the diagnosis column. And I configured the automated ML experiment to be Onnx compatible for deployment.
+In my automl settings, I set the experiment to time out at 30 minutes, run 4 experiments at a time and the primary metric to be optimized for model selection will be the accuracy of each model generated.
+It is a classification experiment and my target column to be predicted is the diagnosis column. 
+The AutoML experiment trains a number of modeld in a short time frame and chooses the best performing model of all the models traied. This is why AutoML is recommended to optimize compute, save time and perform so much better and I configured this automated ML experiment to be Onnx compatible for deployment which makes it easily accessible.
 
 ### Results
-
-My best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which could've been improved by increasing the run time and if it ran on the compute target.
+The AutoML experiment successfully trained a total of 38 models which generally performed well but the best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which could've been improved by increasing the run time and if it ran on the compute target.
 
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/automl%20run%20widget%201.png">
@@ -64,14 +62,17 @@ My best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which coul
 ## Hyperparameter Tuning
 
 Hyperparameters are adjustable parameters we choose for model training that guide the training process. The HyperDrive package helps to automate choosing these parameters.
-For my logistic regression experiment, the parameters I used in the search space are C and max_iter. I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric was the accuracy metric.
-My parameter search space was defined using the C(continuous values, ranging uniformly between 0.2 and 0.5) and the max_iter (discrete values, ranging by choice between 2 and 50), with smaller values to get a stronger regularization for the hyperparameter and the maximum number of iterations for the classification algorithm. My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
+
+For my logistic regression experiment, the parameters I used in the search space are C and max_iter which was defined using C (continuous values, ranging uniformly between 0.2 and 0.5), (I chose smaller values to get a stronger and better regularization of the model) and the max_iter (discrete values, ranging by choice between 2 and 50), which is the maximum number of iterations for the classification algorithm.
+
+I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric was the accuracy metric.
+ My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
 
 My hyperdrive configuration included the estimator, the policy, the parameter sampler, the primary metric as "Accuracy" and to maximize it as the goal, maximum concurrent runs, and the total runs for the experiment. I submitted this configuration for the hyperdrive and began the experiment run.
 
 
 ### Results
-My best performing model had an accuracy of 0.9090. I could have improved the performance of this model by increasing the run time and the range of values in my C and max_iter parameter search space. The parameters were independently set at: regularization strength of 0.35 and maximum iteration value of 50 
+My best performing model had an accuracy of 0.9090. I could have improved the performance of this model by increasing the run time and the range of values in the max_iter parameter search space. The parameters were independently and automatically set at: regularization strength of 0.35 and maximum iteration value of 50 
 
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/hyperdrive%20run%20details%201.png">
