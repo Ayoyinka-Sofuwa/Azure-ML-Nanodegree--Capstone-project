@@ -46,9 +46,21 @@ It is a classification experiment and my target column to be predicted is the di
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
-My best AutoMl model is the VotingEnsemble with an accuracy of 94%, 
+My best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which could've been improved by increasing the run time and if it ran on the compute target.
 
 *TODO* Remember to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with its parameters.
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/automl%20run%20widget%201.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/automl%20run%20widget%202.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/automl%20best%20model.png">
+</p>
+
 
 ## Hyperparameter Tuning
 
@@ -60,30 +72,25 @@ My hyperdrive configuration included the estimator, the policy, the parameter sa
 
 
 ### Results
-My best performing model had an accuracy of 91.6%. I could have improved the performance of this model by increasing the range of values in my C and max_iter parameter search space. The parameters were independently set at: regularization strength of 0.2368 and maximum iteration value of 50 
+My best performing model had an accuracy of 0.9090. I could have improved the performance of this model by increasing the run time and the range of values in my C and max_iter parameter search space. The parameters were independently set at: regularization strength of 0.35 and maximum iteration value of 50 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/5000ac6963fe744349c5aaebf0edc0922eb194cc/screenshots/run%20details%20hyper.png">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/hyperdrive%20run%20details%201.png">
 </p>
 
 <p align="center">
-  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/run%20details%20hyper.png">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/hyperdrive%20run%20details%202.png">
 </p>
 
 This is the screenshot of the best trained model with its parameters
 <p align="center">
-  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/best%20run%20hyper.png">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/hyperdrive%20bestrun%20studio.png">
 </p>
-
-<p align="center">
-  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshots/best%20run%20details.png">
-</p>
-
-
 
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+On deployement of my AutoML model, I deployed to the Azure Container Instance(ACI)storage which can be accessed by key activated through authentication[Key-based Authentication], I enabled application insight after deployment and retrieved my logs. Then I deleted the coompute instance.
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
