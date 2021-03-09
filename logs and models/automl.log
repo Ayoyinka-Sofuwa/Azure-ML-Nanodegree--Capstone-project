@@ -1,17 +1,73 @@
-2021-02-12 19:13:50.842 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
-2021-02-12 19:13:50.847 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
-2021-02-12 19:13:50.864 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
-2021-02-12 19:13:53.134 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=2270.71[ms]
-2021-02-12 19:13:53.134 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=2287.74[ms]
-2021-02-12 19:13:53.143 - INFO - 20054 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
-2021-02-12 19:14:02.369 - INFO - 20054 - azureml.automl.runtime.distributed.utilities.horovod_initialized:58 - Horovod not found in current environment. Distribution via Horovod will be disabled.
-2021-02-12 19:14:04.704 - INFO - 20054 - azureml.automl.runtime.featurization.data_transformer.__init__:184 - Feature sweeping enabled: False
-2021-02-12 19:14:04.704 - INFO - 20054 - azureml.automl.runtime.featurization.data_transformer.__init__:185 - Feature sweeping timeout: 86400
-2021-02-12 19:14:05.822 - INFO - 20054 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=12679.09[ms]
-2021-02-12 19:14:05.823 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=14980.24[ms]
-2021-02-12 19:15:56.415 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
-2021-02-12 19:15:56.420 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
-2021-02-12 19:15:56.436 - INFO - 20054 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
-2021-02-12 19:17:43.724 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=107287.63[ms]
-2021-02-12 19:17:43.858 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=107437.77[ms]
-2021-02-12 19:17:44.191 - INFO - 20054 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=107775.57[ms]
+2021-03-09 20:27:12.368 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetBestChild
+2021-03-09 20:27:12.371 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-03-09 20:27:12.481 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=110.35[ms]
+2021-03-09 20:27:12.481 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetBestChild, HowEnded=Success, Duration=113.22[ms]
+2021-03-09 20:27:12.482 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_perform_best_run_explain_model:79 - Computing model explanations for best run AutoML_f522ea1c-2bb4-412c-b0e2-702869f6a55f_38 on local
+2021-03-09 20:27:12.482 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.load:229 - Loading from file cache
+2021-03-09 20:27:12.482 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: load
+2021-03-09 20:27:12.483 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store._try_loading_saved_as_object:263 - Loading the saved_as object from cache.
+2021-03-09 20:27:12.552 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store._try_loading_saved_as_object:266 - The saved_as object is: {'y': <_SavedAsProtocol.NUMPY: 2>, 'X': <_SavedAsProtocol.PICKLE: 1>, 'class_labels': <_SavedAsProtocol.NUMPY: 2>, 'X_raw': <_SavedAsProtocol.PICKLE: 1>, 'y_raw': <_SavedAsProtocol.NUMPY: 2>, 'train CV splits': <_SavedAsProtocol.PICKLE: 1>, 'featurized train CV splits': <_SavedAsProtocol.PICKLE: 1>, 'dataset_cached_keys': <_SavedAsProtocol.PICKLE: 1>}
+2021-03-09 20:27:12.566 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=load, HowEnded=Success, Duration=83.77[ms]
+2021-03-09 20:27:12.567 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: get
+2021-03-09 20:27:12.567 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: dataset_cached_keys
+2021-03-09 20:27:12.585 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=get, HowEnded=Success, Duration=18.16[ms]
+2021-03-09 20:27:12.585 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: get
+2021-03-09 20:27:12.585 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: X
+2021-03-09 20:27:12.604 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: y_raw
+2021-03-09 20:27:12.624 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: featurized train CV splits
+2021-03-09 20:27:12.649 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: class_labels
+2021-03-09 20:27:12.670 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: X_raw
+2021-03-09 20:27:12.687 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: y
+2021-03-09 20:27:12.705 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: train CV splits
+2021-03-09 20:27:12.721 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=get, HowEnded=Success, Duration=136.48[ms]
+2021-03-09 20:27:12.722 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver_factory._get_model_explain_driver:60 - Constructing model explain config for classification
+2021-03-09 20:27:12.723 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_auto_mode_explain_model:134 - The dependent model explainability packages are:- {"azureml-train-automl-runtime": "1.22.0", "azureml-interpret": "1.22.0", "interpret-community": "0.16.0", "interpret-core": "0.2.1"}
+2021-03-09 20:27:12.723 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_helper._check_model_explain_packages:169 - All dependent explainability packages are importable
+2021-03-09 20:27:12.723 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_auto_mode_explain_model:147 - [RunId:AutoML_f522ea1c-2bb4-412c-b0e2-702869f6a55f_38]Start auto mode model explanations
+2021-03-09 20:27:13.455 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver._rehydrate_automl_fitted_model:117 - Successfully downloaded and loaded the model for explanations
+2021-03-09 20:27:13.472 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.setup_model_explain_train_data:91 - Preparation of training data for model explanations completed.
+2021-03-09 20:27:13.473 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.setup_model_explain_train_data:104 - Preparation of raw data for model explanations completed.
+2021-03-09 20:27:13.473 - INFO - 5464 - azureml.train.automl.runtime.automl_explain_utilities._get_unique_classes:696 - Got class labels from the AutoML estimator
+2021-03-09 20:27:13.473 - INFO - 5464 - azureml.train.automl.runtime.automl_explain_utilities._get_unique_classes:709 - The number of unique classes in training data are 2
+2021-03-09 20:27:13.474 - INFO - 5464 - azureml.train.automl.runtime.automl_explain_utilities._automl_pick_surrogate_model_and_set_params:998 - The number of core being set for explainable model is: 1
+2021-03-09 20:27:13.474 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.log_explanation_data_stats:196 - Dimensionality of initialization samples:- 569 samples 5 features
+2021-03-09 20:27:13.474 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.log_explanation_data_stats:199 - Dimensionality of evaluation samples:- 569 samples 5 features
+2021-03-09 20:27:13.475 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.log_explanation_data_stats:204 - Dimensionality of feature map:- 5 raw features 5 engineered features
+2021-03-09 20:27:13.475 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.log_explanation_data_stats:207 - Number of engineered feature names are:- 5
+2021-03-09 20:27:13.475 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_driver.log_explanation_data_stats:211 - Number of raw feature names are:- 5
+2021-03-09 20:27:13.771 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_model_explain_helper._log_blackbox_explainer_replication_measure:225 - The replication score for teacher model VotingEnsemble with surrogate model LightGBM is:- 0.9982425307557118
+2021-03-09 20:27:17.155 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_auto_mode_explain_model:205 - Computation of engineered feature importance completed.
+2021-03-09 20:27:19.405 - INFO - 5464 - azureml.automl.core.systemusage_telemetry._log_memory_usage:62 - memory usage 980918272
+2021-03-09 20:27:19.405 - INFO - 5464 - azureml.automl.core.systemusage_telemetry._log_memory_usage:62 - child memory usage 1158504448
+2021-03-09 20:27:19.406 - INFO - 5464 - azureml.automl.core.systemusage_telemetry._log_cpu_usage:71 - cpu time 105.467735
+2021-03-09 20:27:19.406 - INFO - 5464 - azureml.automl.core.systemusage_telemetry._log_cpu_usage:71 - child cpu time 459.93775
+2021-03-09 20:27:19.941 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_auto_mode_explain_model:229 - Computation of raw feature importance completed.
+2021-03-09 20:27:19.941 - INFO - 5464 - azureml.train.automl.runtime._automl_model_explain.automl_auto_mode_model_explain._automl_auto_mode_explain_model:231 - [RunId:AutoML_f522ea1c-2bb4-412c-b0e2-702869f6a55f_38]End auto mode model explanation
+2021-03-09 20:27:19.943 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: get
+2021-03-09 20:27:19.943 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.get:153 - Getting data for key: dataset_cached_keys
+2021-03-09 20:27:20.012 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=get, HowEnded=Success, Duration=69.49[ms]
+2021-03-09 20:27:20.478 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.load:229 - Loading from file cache
+2021-03-09 20:27:20.478 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: load
+2021-03-09 20:27:20.479 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store._try_loading_saved_as_object:263 - Loading the saved_as object from cache.
+2021-03-09 20:27:20.507 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store._try_loading_saved_as_object:266 - The saved_as object is: {'y': <_SavedAsProtocol.NUMPY: 2>, 'X': <_SavedAsProtocol.PICKLE: 1>, 'class_labels': <_SavedAsProtocol.NUMPY: 2>, 'X_raw': <_SavedAsProtocol.PICKLE: 1>, 'y_raw': <_SavedAsProtocol.NUMPY: 2>, 'train CV splits': <_SavedAsProtocol.PICKLE: 1>, 'featurized train CV splits': <_SavedAsProtocol.PICKLE: 1>, 'dataset_cached_keys': <_SavedAsProtocol.PICKLE: 1>}
+2021-03-09 20:27:20.522 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=load, HowEnded=Success, Duration=43.54[ms]
+2021-03-09 20:27:20.522 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.unload:243 - Unloading from file cache
+2021-03-09 20:27:20.523 - INFO - 5464 - azureml.automl.runtime.shared.file_cache_store.remove_all:209 - Removing all items from cache store.
+2021-03-09 20:27:20.523 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:54 - ActivityStarted: remove_all
+2021-03-09 20:27:20.713 - INFO - 5464 - azureml.automl.runtime.shared.cache_store._log_activity:92 - ActivityCompleted: Activity=remove_all, HowEnded=Success, Duration=189.83[ms]
+2021-03-09 20:27:20.769 - INFO - 5464 - azureml.automl.core.systemusage_telemetry.stop:49 - Stopping usage telemetry collection
+2021-03-09 20:27:20.770 - INFO - 5464 - azureml.train.automl.runtime._experiment_drivers.local_experiment_driver.start:282 - Parent Run AutoML_f522ea1c-2bb4-412c-b0e2-702869f6a55f Complete.
+2021-03-09 20:44:28.469 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-03-09 20:44:28.480 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-03-09 20:44:28.491 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-03-09 20:44:28.605 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=114.78[ms]
+2021-03-09 20:44:28.605 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=125.49[ms]
+2021-03-09 20:44:28.606 - INFO - 5464 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-03-09 20:44:29.702 - INFO - 5464 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=1095.84[ms]
+2021-03-09 20:44:29.702 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1232.75[ms]
+2021-03-09 20:45:14.669 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-03-09 20:45:14.685 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-03-09 20:45:14.696 - INFO - 5464 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-03-09 20:47:04.350 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=109654.3[ms]
+2021-03-09 20:47:04.437 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=109752.25[ms]
+2021-03-09 20:47:04.893 - INFO - 5464 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=110223.9[ms]
