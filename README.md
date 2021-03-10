@@ -1,10 +1,12 @@
 # Capstone-project
-This is the final Udacity Nanodegree Project for the 7-month Machine Learning Engineer with Azure course training.
+This is the final Udacity Nanodegree Project for the 7-month Machine Learning Engineer with Azure training.
 
 ### Introduction
-This project is focused on tuning hyperparameters using the hyperdrive and the automated ML method to train more models faster and automatically 
+This project is focused on generating models by tuning hyperparameters using the hyperdrive and training models with Automated ML faster and automatically, and then deploying and testing the best performing model.
+
 ### Overview
-For this experiment I decided to work on a breast cancer dataset which affects a large population of women all around the world. This dataset focuses on the lumps that appear in the breast, exploring the properites in size, texture, smoothness etc to predict if it is cancerous or not, which is the description of the diagnosis column
+For this experiment I decided to work on a breast cancer dataset which affects a large population of women all around the world. This dataset focuses on the lumps that appear in the breast, exploring the properites in size, texture, smoothness etc to predict if it is cancerous or not, which is the description of the diagnosis column.
+
 This data was gotten from [Kaggle](https://www.kaggle.com/merishnasuwal/breast-cancer-prediction-dataset)
 I used two different kinds of experiments to make this prediction and compared which model performed best.
 The two experiments are the [Automated Machine learning](https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-first-experiment-automated-ml) and the [Hyperdrive](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) experiments.
@@ -39,12 +41,15 @@ I accessed the data using the URL, using the delimited files method from the Tab
 
 ## Automated ML
 
+(Popularly called AutoML) is the automatic process of model algorithm selection, hyper parameter tuning, iterative modelling, and model assessment.
+
 In my automl settings, I set the experiment to time out at 30 minutes, run 4 experiments at a time and the primary metric to be optimized for model selection will be the accuracy of each model generated.
 It is a classification experiment and my target column to be predicted is the diagnosis column. 
 The AutoML experiment trains a number of modeld in a short time frame and chooses the best performing model of all the models traied. This is why AutoML is recommended to optimize compute, save time and perform so much better and I configured this automated ML experiment to be Onnx compatible for deployment which makes it easily accessible.
 
 ### Results
-The AutoML experiment successfully trained a total of 38 models which generally performed well but the best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which could've been improved by increasing the run time and if it ran on the compute target.
+* The AutoML experiment successfully trained a total of 38 models which generally performed well and the best AutoMl model is the VotingEnsemble with an accuracy of 0.9384 which could've been improved by increasing the run time and if it ran on the compute target.
+* Another possible way to improve the output here is to use `AUC_weighted` as my primary metric because of the size of my dataset which isn't very large.
 
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/automl%20run%20widget%201.png">
