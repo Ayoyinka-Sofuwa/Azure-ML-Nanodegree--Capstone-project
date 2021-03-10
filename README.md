@@ -91,14 +91,12 @@ This is the screenshot of the best trained model with its parameters
 
 
 ## Model Deployment
+The AutoML experiment performed best of the two experiments [Hyperdrive and Automated Machine Learning]
 
 On deployment of my AutoML model, I deployed to the Azure Container Instance(ACI)storage which can be accessed by key activated through authentication[Key-based Authentication], I enabled application insight after deployment and retrieved my logs. Then I deleted the coompute instance.
 
 ## Screen Recording
-*TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+https://youtu.be/zuqittNSbxY
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
