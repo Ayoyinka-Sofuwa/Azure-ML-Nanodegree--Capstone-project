@@ -108,6 +108,12 @@ b. An Azure Machine Learning environment. An environment defines the software de
 
 Then the model is deployed using the workspace, deployment name, model, inference and deployment config.
 I then enabled application insight after deployment and retrieved my logs. 
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/deployment.png">
+</p>
+
+
 To check how well my model was doing at the endpoint, I wrote a [script](https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/endpoint.py) which takes in the scoring_uri, the primary key and the data. The output was a json file that indicates how our target feature or variable is uspposed to turn out.
 
 Then I deleted the compute instance.
@@ -116,8 +122,19 @@ Then I deleted the compute instance.
 https://youtu.be/zuqittNSbxY
 
 ## Standout Suggestions
-1. I tested
+1. I tested the deployed model in the studio by inputing a random observation from our data without the target column and it produced an accurate result which could be indicative that the model is performing well and has a low bias.
+
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/testing%20the%20deployed%20model.png">
 </p>
 
+2. I converted my AutoML model to an ONNX format to make it easy to convert from one frame to another and to easily deploy the model
+3. I enabled logging in my deployed model and viewed metrics in the studio about the occurences during the operation
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/logging%201.png">
+</p>
+
+<p align="center">
+  <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/logging%202.png">
+</p>
