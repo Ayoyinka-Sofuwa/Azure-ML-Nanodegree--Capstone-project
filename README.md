@@ -65,10 +65,12 @@ Hyperparameters are adjustable parameters we choose for model training that guid
 
 For my logistic regression experiment, the parameters I used in the search space are C and max_iter which was defined using C (continuous values, ranging uniformly between 0.2 and 0.5), (I chose smaller values to get a stronger and better regularization of the model) and the max_iter (discrete values, ranging by choice between 2 and 50), which is the maximum number of iterations for the classification algorithm.
 
-I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric was the accuracy metric.
- My estimator is the SKLearn estimator which I used to call the script into the experiment from the directory, and the define the compute target/cluster to be used. 
+I ran a RansomSampling method over the search space because it iterates much faster than the GridSearch method, my primary metric is the accuracy metric.
+The estimator is the SKLearn estimator which was used to call the script into the experiment from the directory, and defined the compute target/cluster to be used.
 
-My hyperdrive configuration included the estimator, the policy, the parameter sampler, the primary metric as "Accuracy" and to maximize it as the goal, maximum concurrent runs, and the total runs for the experiment. I submitted this configuration for the hyperdrive and began the experiment run.
+The early stopping Policy which is defined to delay evaluation until after two iterations, starting from the 5th, is to terminate any model that doesn't perform up to a 91% of the recorded best model.
+
+Overall, my hyperdrive configuration included the estimator, the policy, the parameter sampler, the primary metric as "Accuracy" and to maximize it as the goal, maximum concurrent runs, and the total runs for the experiment. I submitted this configuration for the hyperdrive and began the experiment run.
 
 
 ### Results
