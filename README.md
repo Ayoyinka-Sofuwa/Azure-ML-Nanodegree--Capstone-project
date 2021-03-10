@@ -91,15 +91,32 @@ This is the screenshot of the best trained model with its parameters
 
 
 ## Model Deployment
-The AutoML experiment performed best of the two experiments [Hyperdrive and Automated Machine Learning]
+The AutoML experiment performed best of the two experiments [Hyperdrive and Automated Machine Learning].
 
-On deployment of my AutoML model, I deployed to the Azure Container Instance(ACI)storage which can be accessed by key activated through authentication[Key-based Authentication], I enabled application insight after deployment and retrieved my logs. Then I deleted the coompute instance.
+* First, register the model.
+Registering a model allows you to store, version, and track metadata about models in your workspace.
+The model is registered by defining the model name and description.
+
+On deployment of my AutoML model, I deployed to the Azure Container Instance(ACI)storage which can be accessed by key activated through authentication[Key-based Authentication];
+* To set the deployment configuration:
+Azure container instance (ACI) webservice takes the deploy_configuration method to define authentication, number of CPU cores and the memory.
+
+* To define the inference configuration:
+The inference configuration defines the environment used to run the deployed model. The inference configuration references the following entities, which are used to run the model when it's deployed:
+a. An entry script i.e. [the score.py script](https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/score.py), which loads the model when the deployed service starts. This script is also responsible for receiving data, passing it to the model, and then returning a response.
+b. An Azure Machine Learning environment. An environment defines the software dependencies needed to run the model and entry script.
+
+Then the model is deployed using the workspace, deployment name, model, inference and deployment config.
+I then enabled application insight after deployment and retrieved my logs. 
+To check how well my model was doing at the endpoint, I wrote a [script](https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/endpoint.py) which takes in the scoring_uri, the primary key and the data. The output was a json file that indicates how our target feature or variable is uspposed to turn out.
+
+Then I deleted the compute instance.
 
 ## Screen Recording
 https://youtu.be/zuqittNSbxY
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+1. I tested
 <p align="center">
   <img src="https://github.com/Ayoyinka-Sofuwa/Azure-ML-Nanodegree--Capstone-project/blob/main/screenshot/testing%20the%20deployed%20model.png">
 </p>
